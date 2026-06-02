@@ -13,8 +13,22 @@ export default function BookingPage() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    // TODO: API連携（現在はダミー送信）
-    await new Promise((r) => setTimeout(r, 800));
+    const form = e.currentTarget;
+    const body = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      cemetery: (form.elements.namedItem("cemetery") as HTMLInputElement).value,
+      address: (form.elements.namedItem("address") as HTMLInputElement).value,
+      date: (form.elements.namedItem("date") as HTMLInputElement).value,
+      plan: (form.elements.namedItem("plan") as HTMLSelectElement).value,
+      notes: (form.elements.namedItem("notes") as HTMLTextAreaElement).value,
+    };
+    await fetch("/api/booking", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
     router.push("/booking/thanks");
   }
 
