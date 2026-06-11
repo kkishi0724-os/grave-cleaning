@@ -1,4 +1,11 @@
 import Link from "next/link";
+import {
+  IllustBooking,
+  IllustCalendar,
+  IllustCleaning,
+  IllustPhoto,
+  IllustPayment,
+} from "./components/StepIllustrations";
 
 const plans = [
   {
@@ -50,27 +57,27 @@ const plans = [
 
 const steps = [
   {
-    icon: "📋",
+    Illust: IllustBooking,
     title: "ご予約・ご相談",
     desc: "LINEまたはお問い合わせフォームからご連絡ください。墓所の場所やご希望をお聞きします。",
   },
   {
-    icon: "📅",
+    Illust: IllustCalendar,
     title: "日程確定",
     desc: "ご希望の日程をもとにスタッフが現地へ。1〜2日以内にご連絡いたします。",
   },
   {
-    icon: "🧹",
+    Illust: IllustCleaning,
     title: "清掃・お参り実施",
     desc: "ご選択のプランに沿って丁寧に作業します。プレミアムはビデオ通話でリアルタイム参加も可能です。",
   },
   {
-    icon: "📸",
+    Illust: IllustPhoto,
     title: "写真報告",
     desc: "作業前後の写真をLINEまたはメールでお送りします。仕上がりをしっかりご確認いただけます。",
   },
   {
-    icon: "💳",
+    Illust: IllustPayment,
     title: "お支払い",
     desc: "作業完了後に銀行振込またはPayPayにてお支払いください。",
   },
@@ -235,8 +242,9 @@ export default function Home() {
               <div className="space-y-6">
                 {steps.map((s, i) => (
                   <div key={s.title} className="flex items-start gap-4 relative">
-                    <div className="w-12 h-12 rounded-full bg-stone-100 border-2 border-stone-300 flex items-center justify-center text-2xl shrink-0 relative z-10">
-                      {s.icon}
+                    {/* イラスト */}
+                    <div className="w-20 h-20 shrink-0 relative z-10 bg-white rounded-2xl border border-stone-200 p-1 shadow-sm">
+                      <s.Illust />
                     </div>
                     <div className="flex-1 bg-stone-50 rounded-2xl p-4">
                       <div className="flex items-center gap-2 mb-1">
