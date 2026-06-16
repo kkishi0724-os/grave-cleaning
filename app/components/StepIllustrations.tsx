@@ -193,52 +193,51 @@ export function IllustPhoto() {
   );
 }
 
-// STEP5: PayPay決済
+// STEP5: 銀行振込
 export function IllustPayment() {
   return (
     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      {/* カード */}
-      <rect x="15" y="55" width="90" height="55" rx="8" fill={C.stoneDark} transform="rotate(-8 60 80)" />
-      <rect x="15" y="55" width="90" height="55" rx="8" fill="#5a7a9a" transform="rotate(-8 60 80)" />
-      <rect x="15" y="68" width="90" height="14" fill="#4a6a8a" transform="rotate(-8 60 80)" />
-      <rect x="24" y="82" width="24" height="16" rx="3" fill="#f5c040" transform="rotate(-8 60 80)" />
+      {/* 通帳・振込伝票風カード */}
+      <rect x="14" y="30" width="92" height="64" rx="8" fill={C.stonePale} />
+      <rect x="14" y="30" width="92" height="22" rx="8" fill={C.stoneDark} />
+      <rect x="14" y="42" width="92" height="10" fill={C.stoneDark} />
 
-      {/* スマホ */}
-      <rect x="32" y="8" width="56" height="90" rx="8" fill={C.stoneDark} />
-      <rect x="36" y="15" width="48" height="74" rx="5" fill={C.white} />
-      <circle cx="60" cy="12" r="2.5" fill={C.stone} />
-      <circle cx="60" cy="103" r="4" fill={C.stone} />
+      {/* 銀行アイコン（柱） */}
+      <rect x="38" y="34" width="4" height="12" rx="1" fill={C.stoneLight} />
+      <rect x="46" y="34" width="4" height="12" rx="1" fill={C.stoneLight} />
+      <rect x="54" y="34" width="4" height="12" rx="1" fill={C.stoneLight} />
+      <rect x="62" y="34" width="4" height="12" rx="1" fill={C.stoneLight} />
+      <rect x="70" y="34" width="4" height="12" rx="1" fill={C.stoneLight} />
+      {/* 屋根 */}
+      <polygon points="34,36 86,36 60,24" fill={C.stoneLight} />
+      {/* 土台 */}
+      <rect x="34" y="45" width="52" height="4" rx="1" fill={C.stoneLight} />
 
-      {/* PayPayロゴ風 */}
-      <rect x="40" y="19" width="40" height="10" rx="3" fill="#e63f20" />
-      <rect x="43" y="21" width="24" height="6" rx="2" fill={C.white} />
+      {/* 振込先情報 */}
+      <rect x="22" y="60" width="30" height="4" rx="2" fill={C.stoneLight} />
+      <rect x="22" y="68" width="76" height="5" rx="2" fill={C.stone} opacity="0.3" />
+      <rect x="22" y="77" width="50" height="5" rx="2" fill={C.stone} opacity="0.3" />
 
-      {/* QRコード */}
-      <rect x="41" y="33" width="38" height="38" rx="3" fill={C.stonePale} />
-      {/* QR角マーカー */}
-      <rect x="43" y="35" width="12" height="12" rx="2" fill={C.stoneDark} />
-      <rect x="45" y="37" width="8" height="8" rx="1" fill={C.white} />
-      <rect x="47" y="39" width="4" height="4" rx="0.5" fill={C.stoneDark} />
+      {/* チェックマーク（完了） */}
+      <circle cx="90" cy="80" r="12" fill={C.green} />
+      <polyline
+        points="84,80 88,85 96,73"
+        stroke={C.white}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
 
-      <rect x="65" y="35" width="12" height="12" rx="2" fill={C.stoneDark} />
-      <rect x="67" y="37" width="8" height="8" rx="1" fill={C.white} />
-      <rect x="69" y="39" width="4" height="4" rx="0.5" fill={C.stoneDark} />
+      {/* コイン */}
+      <circle cx="25" cy="15" r="8" fill="#f5c040" />
+      <circle cx="25" cy="15" r="5" fill="#f0b800" />
+      <rect x="23" y="11" width="4" height="8" rx="1" fill="#f5c040" />
 
-      <rect x="43" y="57" width="12" height="12" rx="2" fill={C.stoneDark} />
-      <rect x="45" y="59" width="8" height="8" rx="1" fill={C.white} />
-      <rect x="47" y="61" width="4" height="4" rx="0.5" fill={C.stoneDark} />
+      <circle cx="42" cy="10" r="6" fill="#f5c040" />
+      <circle cx="42" cy="10" r="4" fill="#f0b800" />
 
-      {/* QRドット */}
-      {[0,1,2,3].map(i => (
-        <rect key={i} x={60 + i * 4} y="57" width="3" height="3" rx="0.5" fill={C.stoneDark} />
-      ))}
-      {[0,1,2].map(i => (
-        <rect key={i} x={60} y={61 + i * 4} width="3" height="3" rx="0.5" fill={C.stoneDark} />
-      ))}
-
-      {/* 金額表示 */}
-      <rect x="40" y="75" width="40" height="10" rx="3" fill={C.stonePale} />
-      <rect x="42" y="77" width="24" height="6" rx="2" fill={C.stoneLight} />
+      <circle cx="57" cy="14" r="7" fill="#f5c040" />
+      <circle cx="57" cy="14" r="4.5" fill="#f0b800" />
     </svg>
   );
 }

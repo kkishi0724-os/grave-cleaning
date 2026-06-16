@@ -79,7 +79,7 @@ const steps = [
   {
     Illust: IllustPayment,
     title: "お支払い",
-    desc: "作業完了後に銀行振込またはPayPayにてお支払いください。",
+    desc: "作業完了後に銀行振込にてお支払いください。お振込先は作業完了のご連絡時にお伝えします。",
   },
 ];
 
@@ -265,7 +265,7 @@ export default function Home() {
           <h2 className="text-2xl font-bold mb-3">まずはお気軽にご相談ください</h2>
           <p className="text-stone-300 mb-8 text-sm leading-relaxed">
             対応エリア・日程など、お気軽にお問い合わせください。<br />
-            LINEでのご相談も受け付けています。
+            お支払いは銀行振込のみ対応しています。
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
