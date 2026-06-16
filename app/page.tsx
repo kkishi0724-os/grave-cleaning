@@ -120,13 +120,13 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero */}
         <section className="bg-stone-50 py-20 px-4 text-center">
-          <p className="text-sm text-stone-400 mb-3 tracking-widest uppercase">Grave Cleaning Service</p>
+          <p className="text-sm text-stone-400 mb-3 tracking-widest uppercase">Student Grave Cleaning Service</p>
           <h1 className="text-4xl font-bold text-stone-800 mb-4 leading-snug">
-            大切なご先祖様のお墓を、<br />心を込めて清掃します
+            学生が、一生懸命<br />きれいにします。
           </h1>
           <p className="text-gray-600 max-w-lg mx-auto mb-8 text-lg leading-relaxed">
             遠方にお住まいの方・お体の不自由な方に代わり、<br className="hidden sm:block" />
-            丁寧にお墓のお掃除・お参りを代行いたします。
+            地元の学生が体を動かして丁寧にお墓をきれいにします。
           </p>
           <Link
             href="/booking"
@@ -137,29 +137,68 @@ export default function Home() {
           <p className="text-sm text-gray-400 mt-4">作業前後に写真レポートをお届けします</p>
         </section>
 
-        {/* Features */}
+        {/* About us */}
         <section className="py-16 px-4 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <p className="text-center text-xs font-bold text-stone-400 tracking-widest uppercase mb-2">About us</p>
+            <h2 className="text-2xl font-bold text-center text-stone-800 mb-6">私たちは学生です</h2>
+            <p className="text-gray-600 text-center leading-relaxed mb-10">
+              「アルバイト感覚ではなく、本当に喜んでもらいたい」という気持ちで取り組んでいます。<br />
+              若さと体力を活かして、草むしりも墓石磨きも最後まで手を抜きません。<br />
+              お客様のご先祖様のお墓を、自分の家のお墓と同じように大切に扱います。
+            </p>
+            {/* 3つの約束 */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                {
+                  num: "01",
+                  title: "手を抜きません",
+                  desc: "時間をかけてでも、納得できる仕上がりになるまでやり切ります。",
+                },
+                {
+                  num: "02",
+                  title: "やり直し無料",
+                  desc: "仕上がりにご不満があれば、無料で再清掃いたします。",
+                },
+                {
+                  num: "03",
+                  title: "写真で証明",
+                  desc: "作業前後の写真をお送りして、仕上がりをしっかり確認していただきます。",
+                },
+              ].map((p) => (
+                <div key={p.num} className="bg-stone-50 rounded-2xl p-6 border border-stone-100">
+                  <p className="text-3xl font-bold text-stone-200 mb-2">{p.num}</p>
+                  <h3 className="font-bold text-stone-800 mb-2">{p.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features */}
+        <section className="py-16 px-4 bg-stone-50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-center text-stone-800 mb-10">選ばれる理由</h2>
+            <h2 className="text-2xl font-bold text-center text-stone-800 mb-10">学生ならではの強み</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  icon: "📱",
-                  title: "LINEで完結",
-                  desc: "予約から写真報告まで、すべてLINEで完結。電話不要でスムーズです。",
-                },
-                {
-                  icon: "📹",
-                  title: "リアルタイム参加",
-                  desc: "プレミアムプランではLINEビデオ通話で、画面越しに一緒にお参りできます。",
+                  icon: "💪",
+                  title: "体力で徹底清掃",
+                  desc: "重い墓石の拭き上げも、しつこい雑草の根元抜きも、若い体力で最後までやり切ります。",
                 },
                 {
                   icon: "💰",
                   title: "リーズナブルな価格",
-                  desc: "8,000円〜。学生スタッフが丁寧に対応することでコストを抑えています。",
+                  desc: "業者に頼むより手頃な8,000円〜。学生が直接対応するからこそ実現できる価格です。",
+                },
+                {
+                  icon: "📱",
+                  title: "LINEで気軽に相談",
+                  desc: "予約・報告・質問まですべてLINEで完結。堅苦しくなく気軽にやりとりできます。",
                 },
               ].map((f) => (
-                <div key={f.title} className="text-center p-6 rounded-2xl bg-stone-50">
+                <div key={f.title} className="text-center p-6 rounded-2xl bg-white border border-stone-100">
                   <div className="text-4xl mb-3">{f.icon}</div>
                   <h3 className="font-bold text-stone-800 mb-2">{f.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
