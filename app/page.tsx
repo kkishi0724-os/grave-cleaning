@@ -59,7 +59,7 @@ const steps = [
   {
     Illust: IllustBooking,
     title: "ご予約・ご相談",
-    desc: "LINEまたはお問い合わせフォームからご連絡ください。墓所の場所やご希望をお聞きします。",
+    desc: "LINE・フォーム・お電話、どこからでもご連絡ください。墓所の場所やご希望をお聞きします。",
   },
   {
     Illust: IllustCalendar,
@@ -299,19 +299,76 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Service Area */}
+        <section className="py-16 px-4 bg-stone-50" id="area">
+          <div className="max-w-3xl mx-auto">
+            <p className="text-center text-xs font-bold text-stone-400 tracking-widest uppercase mb-2">Service Area</p>
+            <h2 className="text-2xl font-bold text-center text-stone-800 mb-2">対応エリア</h2>
+            <p className="text-center text-gray-500 text-sm mb-8">
+              ※距離や場所によって価格が変わる場合があります。まずはご相談ください。
+            </p>
+            <div className="space-y-4">
+              {[
+                {
+                  pref: "大阪府",
+                  color: "bg-amber-50 border-amber-200",
+                  headColor: "text-amber-700",
+                  cities: ["大阪市", "吹田市", "茨木市", "高槻市", "摂津市", "豊中市", "箕面市", "池田市", "守口市", "門真市", "寝屋川市", "枚方市", "交野市", "四條畷市", "大東市", "東大阪市", "八尾市", "柏原市", "藤井寺市", "羽曳野市", "松原市", "堺市", "高石市"],
+                  uncertain: ["泉大津市", "和泉市", "岸和田市", "貝塚市"],
+                },
+                {
+                  pref: "京都府",
+                  color: "bg-red-50 border-red-200",
+                  headColor: "text-red-700",
+                  cities: ["京都市", "向日市", "長岡京市", "八幡市", "京田辺市", "城陽市", "宇治市"],
+                  uncertain: [],
+                },
+                {
+                  pref: "兵庫県",
+                  color: "bg-blue-50 border-blue-200",
+                  headColor: "text-blue-700",
+                  cities: ["尼崎市", "伊丹市", "川西市", "宝塚市", "西宮市", "芦屋市", "神戸市", "三田市", "明石市"],
+                  uncertain: [],
+                },
+              ].map((area) => (
+                <div key={area.pref} className={`rounded-2xl border p-5 ${area.color}`}>
+                  <h3 className={`font-bold text-lg mb-3 ${area.headColor}`}>{area.pref}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {area.cities.map((city) => (
+                      <span key={city} className="bg-white text-stone-700 text-sm px-3 py-1 rounded-full border border-stone-200">
+                        {city}
+                      </span>
+                    ))}
+                    {area.uncertain.map((city) => (
+                      <span key={city} className="bg-white text-stone-400 text-sm px-3 py-1 rounded-full border border-dashed border-stone-300">
+                        {city}
+                      </span>
+                    ))}
+                  </div>
+                  {area.uncertain.length > 0 && (
+                    <p className="text-xs text-stone-400 mt-3">
+                      ※ 点線枠のエリアはご相談ください（対応できない場合があります）
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-16 px-4 bg-stone-700 text-white text-center">
           <h2 className="text-2xl font-bold mb-3">まずはお気軽にご相談ください</h2>
           <p className="text-stone-300 mb-8 text-sm leading-relaxed">
-            対応エリア・日程など、お気軽にお問い合わせください。<br />
-            お支払いは銀行振込のみ対応しています。
+            LINE・フォーム・お電話、どこからでもお気軽にどうぞ。<br />
+            対応エリア・日程・料金など、何でもお聞きください。
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/booking"
               className="inline-block bg-white text-stone-700 px-10 py-4 rounded-full font-bold hover:bg-stone-100 transition-colors"
             >
-              予約フォームへ
+              フォームで相談・予約
             </Link>
             <button
               className="inline-flex items-center gap-2 bg-[#06C755] text-white px-10 py-4 rounded-full font-bold opacity-50 cursor-not-allowed"
@@ -321,6 +378,7 @@ export default function Home() {
               <span className="text-xs">（準備中）</span>
             </button>
           </div>
+          <p className="text-stone-400 text-sm mt-6">お電話でのご相談も受け付けています（番号は準備中）</p>
         </section>
       </main>
 
