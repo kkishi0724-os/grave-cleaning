@@ -285,7 +285,7 @@ export default function Home() {
         <section className="py-16 px-4 bg-white" id="flow">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold text-center text-stone-800 mb-2">作業の流れ</h2>
-            <p className="text-center text-gray-500 text-sm mb-10">ご予約からお支払いまで、すべてスムーズに対応します</p>
+            <p className="text-center text-gray-500 text-sm mb-10">ご予約からお支払いまで丁寧に対応します</p>
             <div className="relative">
               {/* 縦線 */}
               <div className="absolute left-6 top-6 bottom-6 w-px bg-stone-200 hidden sm:block" />
@@ -371,8 +371,9 @@ export default function Home() {
         <section className="py-16 px-4 bg-stone-700 text-white text-center">
           <h2 className="text-2xl font-bold mb-3">まずはお気軽にご相談ください</h2>
           <p className="text-stone-300 mb-8 text-sm leading-relaxed">
-            LINE・フォーム・お電話、どこからでもお気軽にどうぞ。<br />
-            対応エリア・日程・料金など、何でもお聞きください。
+            LINE・フォーム・お電話、何でもお気軽に。
+            <br />
+            エリア・日程・料金など、お気軽にどうぞ。
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -389,7 +390,7 @@ export default function Home() {
               <span className="text-xs">（準備中）</span>
             </button>
           </div>
-          <p className="text-stone-400 text-sm mt-6">お電話でのご相談も受け付けています（番号は準備中）</p>
+          <p className="text-stone-400 text-sm mt-6">お電話でのご相談も受け付けています<br className="sm:hidden" />（番号は準備中）</p>
         </section>
       </main>
 
