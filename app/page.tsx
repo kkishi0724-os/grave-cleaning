@@ -40,11 +40,12 @@ const plans = [
   },
   {
     name: "プレミアムプラン",
-    price: "20,000",
-    tag: "目玉機能あり",
+    price: "50,000",
+    tag: "日程確約プラン",
     tagColor: "bg-sky-500 text-white",
-    summary: "関東や海外など遠方に住んでいて帰省が難しい方、お墓の荒れ具合が心配な方に。",
+    summary: "命日・お盆に合わせて確実にお参りしたい方、LINEでリアルタイムに一緒にお参りしたい方に。",
     features: [
+      "ご希望日の日程確約（日付・曜日を指定できます）",
       "【目玉】LINEビデオ通話でリアルタイムお参り代行",
       "除草剤の散布（または防草砂の簡易補修）",
       "墓石の拭き上げ仕上げ（水滴を残さないプロ仕様）",
@@ -130,29 +131,47 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-stone-50 py-20 px-4 text-center">
-          <p className="text-sm text-stone-400 mb-3 tracking-widest uppercase">Student Grave Cleaning Service</p>
-          <h1 className="text-4xl font-bold text-stone-800 mb-4 leading-snug">
-            学生が、一生懸命<br />きれいにします。
-          </h1>
-          <p className="text-gray-600 max-w-lg mx-auto mb-8 text-lg leading-relaxed">
-            遠方にお住まいの方・お体の不自由な方に代わり、<br className="hidden sm:block" />
-            地元の学生が体を動かして丁寧にお墓をきれいにします。
-          </p>
-          <Link
-            href="/booking"
-            className="inline-block bg-stone-700 text-white px-10 py-4 rounded-full text-lg hover:bg-stone-800 transition-colors"
-          >
-            無料で相談・予約する
-          </Link>
-          <p className="text-sm text-gray-400 mt-4">作業前後に写真レポートをお届けします</p>
+        <section className="bg-stone-50 py-10 sm:py-16 px-4">
+          <div className="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
+            {/* Text */}
+            <div className="flex-1 text-center md:text-left">
+              <div className="flex flex-wrap justify-center md:justify-start items-center gap-2 mb-5">
+                <span className="text-stone-400 text-xs">📍</span>
+                {["大阪府", "京都府", "兵庫県"].map((pref) => (
+                  <span key={pref} className="bg-stone-200 text-stone-700 text-xs font-bold px-3 py-1 rounded-full">
+                    {pref}
+                  </span>
+                ))}
+                <span className="text-stone-400 text-xs">対応</span>
+              </div>
+              <p className="text-sm text-stone-400 mb-2 tracking-widest uppercase">Student Grave Cleaning Service</p>
+              <h1 className="text-4xl font-bold text-stone-800 mb-4 leading-snug">
+                学生が、一生懸命<br />きれいにします。
+              </h1>
+              <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                遠方にお住まいの方・お体の不自由な方に代わり、<br className="hidden md:block" />
+                地元の学生が体を動かして丁寧にお墓をきれいにします。
+              </p>
+              <Link
+                href="/booking"
+                className="inline-block bg-stone-700 text-white px-10 py-4 rounded-full text-lg hover:bg-stone-800 transition-colors"
+              >
+                無料で相談・予約する
+              </Link>
+              <p className="text-sm text-gray-400 mt-4">作業前後に写真レポートをお届けします</p>
+            </div>
+            {/* Illustration（後で実際の写真に差し替え: public/hero.jpg） */}
+            <div className="w-64 h-64 sm:w-80 sm:h-80 shrink-0 rounded-3xl bg-stone-100 overflow-hidden shadow-md">
+              <IllustCleaning />
+            </div>
+          </div>
         </section>
 
         {/* About us */}
         <section className="py-16 px-4 bg-white">
           <div className="max-w-3xl mx-auto">
             <p className="text-center text-xs font-bold text-stone-400 tracking-widest uppercase mb-2">About us</p>
-            <h2 className="text-2xl font-bold text-center text-stone-800 mb-6">私たちは学生です</h2>
+            <h2 className="text-2xl font-bold text-center text-stone-800 mb-6">関西の大学生で作ったサービスです</h2>
             <p className="text-gray-600 text-center leading-relaxed mb-10">
               「アルバイト感覚ではなく、本当に喜んでもらいたい」という気持ちで取り組んでいます。<br />
               若さと体力を活かして、草むしりも墓石磨きも最後まで手を抜きません。<br />

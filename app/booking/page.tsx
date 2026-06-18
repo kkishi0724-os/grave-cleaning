@@ -4,11 +4,18 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-const PLANS = ["ライトプラン（¥6,600）", "スタンダードプラン（¥11,000）", "プレミアムプラン（¥19,800）"];
+const PLANS = [
+  "ライトプラン（¥8,000）",
+  "スタンダードプラン（¥12,000）",
+  "プレミアムプラン（¥50,000）",
+];
 
 export default function BookingPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState("");
+
+  const isPremium = selectedPlan === "プレミアムプラン（¥50,000）";
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -20,7 +27,9 @@ export default function BookingPage() {
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
       cemetery: (form.elements.namedItem("cemetery") as HTMLInputElement).value,
       address: (form.elements.namedItem("address") as HTMLInputElement).value,
-      date: (form.elements.namedItem("date") as HTMLInputElement).value,
+      date: isPremium
+        ? (form.elements.namedItem("date") as HTMLInputElement)?.value || ""
+        : "日程は後日ご連絡で調整",
       plan: (form.elements.namedItem("plan") as HTMLSelectElement).value,
       notes: (form.elements.namedItem("notes") as HTMLTextAreaElement).value,
     };
@@ -82,6 +91,7 @@ export default function BookingPage() {
           <div>
             <label className="block text-sm font-bold text-stone-700 mb-1">
               電話番号
+              <span className="text-gray-400 font-normal ml-1 text-xs">（任意）</span>
             </label>
             <input
               type="tel"
@@ -105,29 +115,16 @@ export default function BookingPage() {
             />
           </div>
 
-          {/* 住所 */}
+          {/* 住所（任意） */}
           <div>
             <label className="block text-sm font-bold text-stone-700 mb-1">
-              住所（霊園の所在地） <span className="text-red-500">*</span>
+              住所（霊園の所在地）
+              <span className="text-gray-400 font-normal ml-1 text-xs">（任意）</span>
             </label>
             <input
               type="text"
               name="address"
-              required
-              placeholder="東京都〇〇区〇〇 1-2-3"
-              className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400"
-            />
-          </div>
-
-          {/* 希望日 */}
-          <div>
-            <label className="block text-sm font-bold text-stone-700 mb-1">
-              ご希望日 <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="date"
-              name="date"
-              required
+              placeholder="大阪府〇〇市〇〇 1-2-3"
               className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400"
             />
           </div>
@@ -140,6 +137,7 @@ export default function BookingPage() {
             <select
               name="plan"
               required
+              onChange={(e) => setSelectedPlan(e.target.value)}
               className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400 bg-white"
             >
               <option value="">選択してください</option>
@@ -149,10 +147,35 @@ export default function BookingPage() {
             </select>
           </div>
 
+          {/* 希望日（プレミアムのみ必須） */}
+          {isPremium ? (
+            <div>
+              <label className="block text-sm font-bold text-stone-700 mb-1">
+                ご希望日 <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="date"
+                name="date"
+                required
+                className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400"
+              />
+              <p className="text-xs text-stone-400 mt-1">
+                プレミアムプランはご希望日を確約いたします
+              </p>
+            </div>
+          ) : selectedPlan ? (
+            <div className="bg-stone-50 rounded-lg px-4 py-3 border border-stone-100">
+              <p className="text-sm text-stone-600">
+                📅 作業日程は予約確認後、スタッフよりLINEまたはお電話で日程調整いたします。
+              </p>
+            </div>
+          ) : null}
+
           {/* 備考 */}
           <div>
             <label className="block text-sm font-bold text-stone-700 mb-1">
               ご要望・備考
+              <span className="text-gray-400 font-normal ml-1 text-xs">（任意）</span>
             </label>
             <textarea
               name="notes"
@@ -171,7 +194,7 @@ export default function BookingPage() {
           </button>
 
           <p className="text-xs text-gray-400 text-center">
-            送信後、1営業日以内に確認メールをお送りします
+            送信後、1営業日以内に確認のご連絡をいたします
           </p>
         </form>
       </main>
