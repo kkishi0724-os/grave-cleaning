@@ -5,9 +5,9 @@ import "./globals.css";
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 
 export const metadata: Metadata = {
-  title: "お墓清掃代行サービス | 丁寧なお墓参り代行",
+  title: "関西お墓サポート | 学生によるお墓清掃代行",
   description:
-    "遠方にお住まいの方や、お体の不自由な方に代わり、心を込めてお墓の清掃・お参り代行を行います。",
+    "大阪・京都・兵庫エリアで、関西の大学生が心を込めてお墓の清掃・お参り代行を行います。遠方の方・お体の不自由な方にご利用いただいています。",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

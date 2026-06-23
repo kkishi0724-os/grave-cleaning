@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   IllustBooking,
   IllustCalendar,
@@ -90,10 +91,13 @@ export default function Home() {
       {/* Header */}
       <header className="border-b border-gray-200 bg-white sticky top-0 z-10">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div>
-            <span className="text-xl font-bold text-stone-700">お墓清掃代行</span>
-            <span className="ml-2 text-xs text-stone-400 hidden sm:inline">丁寧なお墓参り代行サービス</span>
-          </div>
+          <Image
+            src="/logo.png"
+            alt="関西お墓サポート"
+            width={56}
+            height={56}
+            className="h-12 w-auto"
+          />
           <div className="flex items-center gap-3">
             {/* X (Twitter) */}
             <a
@@ -438,7 +442,7 @@ export default function Home() {
             Instagram
           </a>
         </div>
-        <p>© 2026 お墓清掃代行サービス. All rights reserved.</p>
+        <p>© 2026 関西お墓サポート. All rights reserved.</p>
       </footer>
     </div>
   );
