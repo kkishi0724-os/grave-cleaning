@@ -48,7 +48,6 @@ const plans = [
     features: [
       "ご希望日の日程確約（日付・曜日を指定できます）",
       "【目玉】LINEビデオ通話でリアルタイムお参り代行",
-      "除草剤の散布（または防草砂の簡易補修）",
       "墓石の拭き上げ仕上げ（水滴を残さないプロ仕様）",
       "お花・お線香のお供えとお参り",
       "作業前後の写真報告（LINEまたはメール）",
@@ -246,7 +245,7 @@ export default function Home() {
         <section className="py-16 px-4 bg-stone-50" id="plans">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold text-center text-stone-800 mb-2">料金プラン</h2>
-            <p className="text-center text-gray-500 mb-10 text-sm">すべて税込み・別途交通費実費</p>
+            <p className="text-center text-gray-500 mb-10 text-sm">すべて税込み・交通費込み</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
               {plans.map((plan) => (
                 <div
