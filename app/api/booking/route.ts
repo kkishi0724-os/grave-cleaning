@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
 
     const result = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "kkishi0724@gmail.com",
+      to: "kansaiohakasupport@gmail.com",
       subject: `【お墓清掃代行】新しいご予約：${name} 様`,
       html: `
         <h2>新しいご予約が届きました</h2>
