@@ -167,9 +167,15 @@ export default function Home() {
               </Link>
               <p className="text-sm text-gray-400 mt-4">作業前後に写真レポートをお届けします</p>
             </div>
-            {/* Illustration（後で実際の写真に差し替え: public/hero.jpg） */}
-            <div className="w-64 h-64 sm:w-80 sm:h-80 shrink-0 rounded-3xl bg-stone-100 overflow-hidden shadow-md">
-              <IllustCleaning />
+            {/* ヒーロー写真 */}
+            <div className="w-64 h-64 sm:w-80 sm:h-80 shrink-0 rounded-3xl overflow-hidden shadow-md">
+              <Image
+                src="/hero.jpg"
+                alt="お墓清掃の様子"
+                width={320}
+                height={320}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </section>
