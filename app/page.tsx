@@ -123,7 +123,9 @@ export default function Home() {
               </svg>
             </a>
             <Link
-              href="/booking"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScJnKFIZZh3s7qELYY_cRaE-T2j5DingdvaemjDlizKDfVG9w/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-stone-700 text-white text-sm px-5 py-2 rounded-full hover:bg-stone-800 transition-colors"
             >
               予約する
@@ -156,7 +158,9 @@ export default function Home() {
                 地元の学生が体を動かして丁寧にお墓をきれいにします。
               </p>
               <Link
-                href="/booking"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScJnKFIZZh3s7qELYY_cRaE-T2j5DingdvaemjDlizKDfVG9w/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
                 className="inline-block bg-stone-700 text-white px-10 py-4 rounded-full text-lg hover:bg-stone-800 transition-colors"
               >
                 無料で相談・予約する
@@ -288,7 +292,9 @@ export default function Home() {
                   </ul>
 
                   <Link
-                    href="/booking"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScJnKFIZZh3s7qELYY_cRaE-T2j5DingdvaemjDlizKDfVG9w/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
                     className={`text-center py-2.5 rounded-full text-sm font-bold transition-colors ${
                       plan.highlight
                         ? "bg-white text-stone-700 hover:bg-stone-100"
@@ -399,7 +405,9 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/booking"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScJnKFIZZh3s7qELYY_cRaE-T2j5DingdvaemjDlizKDfVG9w/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-white text-stone-700 px-10 py-4 rounded-full font-bold hover:bg-stone-100 transition-colors"
             >
               フォームで相談・予約
