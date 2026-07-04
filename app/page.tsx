@@ -1,12 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  IllustBooking,
-  IllustCalendar,
-  IllustCleaning,
-  IllustPhoto,
-  IllustPayment,
-} from "./components/StepIllustrations";
 
 const plans = [
   {
@@ -58,27 +51,27 @@ const plans = [
 
 const steps = [
   {
-    Illust: IllustBooking,
+    img: "/step1-booking.jpg",
     title: "ご予約・ご相談",
     desc: "LINE・フォーム・お電話、どこからでもご連絡ください。墓所の場所やご希望をお聞きします。",
   },
   {
-    Illust: IllustCalendar,
+    img: "/step2-schedule.jpg",
     title: "日程確定",
     desc: "ご希望の日程をもとにスタッフが現地へ。1〜2日以内にご連絡いたします。",
   },
   {
-    Illust: IllustCleaning,
+    img: "/hero.jpg",
     title: "清掃・お参り実施",
     desc: "ご選択のプランに沿って丁寧に作業します。プレミアムはビデオ通話でリアルタイム参加も可能です。",
   },
   {
-    Illust: IllustPhoto,
+    img: "/step3-report.jpg",
     title: "写真報告",
     desc: "作業前後の写真をLINEまたはメールでお送りします。仕上がりをしっかりご確認いただけます。",
   },
   {
-    Illust: IllustPayment,
+    img: "/step4-payment.jpg",
     title: "お支払い",
     desc: "作業完了後に銀行振込にてお支払いください。お振込先は作業完了のご連絡時にお伝えします。",
   },
@@ -329,9 +322,8 @@ export default function Home() {
               <div className="space-y-6">
                 {steps.map((s, i) => (
                   <div key={s.title} className="flex items-start gap-4 relative">
-                    {/* イラスト */}
-                    <div className="w-20 h-20 shrink-0 relative z-10 bg-white rounded-2xl border border-stone-200 p-1 shadow-sm">
-                      <s.Illust />
+                    <div className="w-24 h-20 shrink-0 relative z-10 rounded-2xl border border-stone-200 overflow-hidden shadow-sm">
+                      <Image src={s.img} alt={s.title} width={96} height={80} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 bg-stone-50 rounded-2xl p-4">
                       <div className="flex items-center gap-2 mb-1">
