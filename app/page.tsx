@@ -84,12 +84,7 @@ export default function Home() {
       <header className="border-b border-gray-200 bg-white sticky top-0 z-10">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center shadow-sm shrink-0">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 22V12M12 12C12 12 8 9 8 6a4 4 0 018 0c0 3-4 6-4 6z"/>
-                <path strokeLinecap="round" d="M9 22h6"/>
-              </svg>
-            </div>
+            <Image src="/logo.png" alt="関西お墓サポート" width={40} height={40} className="w-10 h-10 shrink-0" />
             <div className="leading-tight">
               <p className="text-[9px] text-emerald-600 font-semibold tracking-[0.12em]">KANSAI OHAKA SUPPORT</p>
               <p className="text-base font-bold text-stone-800">関西お墓サポート</p>
