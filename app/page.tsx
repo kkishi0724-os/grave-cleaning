@@ -86,7 +86,7 @@ export default function Home() {
           <div className="flex items-center gap-2.5">
             <Image src="/logo.png" alt="関西お墓サポート" width={40} height={40} className="w-10 h-10 shrink-0" />
             <div className="leading-tight">
-              <p className="text-[9px] text-emerald-600 font-semibold tracking-[0.12em]">KANSAI OHAKA SUPPORT</p>
+              <p className="text-[9px] font-semibold tracking-[0.12em]" style={{color: '#8c7850'}}>KANSAI OHAKA SUPPORT</p>
               <p className="text-base font-bold text-stone-800">関西お墓サポート</p>
             </div>
           </div>
