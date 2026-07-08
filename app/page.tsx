@@ -83,13 +83,7 @@ export default function Home() {
       {/* Header */}
       <header className="border-b border-gray-200 bg-white sticky top-0 z-10">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Image
-            src="/logo.png"
-            alt="関西お墓サポート"
-            width={56}
-            height={56}
-            className="h-12 w-auto"
-          />
+          <span className="text-lg font-bold text-stone-800 tracking-tight">関西お墓サポート</span>
           <div className="flex items-center gap-3">
             {/* X (Twitter) */}
             <a
